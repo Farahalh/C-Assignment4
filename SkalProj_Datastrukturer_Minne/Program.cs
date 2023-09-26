@@ -56,6 +56,39 @@ namespace SkalProj_Datastrukturer_Minne
                 }
             }
         }
+        /// <summary>
+        /// Questions:
+        /// </summary>
+        /// <returns>
+        /// 1. How does the Stack and Heap Work?
+        /// - The stack is a pile where the item on top of the pile is executed first, 
+        /// for the second item on th epile to be executed the top item must be removed.
+        /// Basically you can not access everyting at the same time.
+        /// 
+        /// - The Heap is is a heap of items in a none specific order, where the executed item is picked from the heap.
+        /// There is no need for the first item to be removed in order for the next item to be executed. 
+        /// Here you can access everything at the same time.
+        /// 
+        /// 2. What are Value Types and Reference Types?
+        /// - Value Types include bool, byte, char, decimal, double, enum, float, int, long, sbyte, short, 
+        /// struct, uint, ulong, and ushort.
+        /// 
+        /// The Value Type directly contains the data.
+        /// 
+        /// - Reference Types are classes and onterfaces. Variables of reference types store references to their data 
+        /// (objects) in memory, so they do not directly contain the data. (An object of tyoe Object, string, or 
+        /// dynamic is also a reference type.
+        /// 
+        /// 3. The following methods generate different result. The first one returns 3, and the second one returns 4. Why?
+        /// (This questoins is referring to a specific code snippet)
+        ///- The first method is using Value Types that is why x = 3; and not y = x; y = 4;
+        ///As y is not overriding x, they do not affect each other because they are not pointing to the same object.
+        ///
+        /// - The second method is using Reference Types, and because both x and y are pointing to the same object,
+        /// y will override the value of x.
+        /// 
+        /// </returns>
+
 
         /// <summary>
         /// Examines the datastructure List

@@ -93,6 +93,7 @@ namespace SkalProj_Datastrukturer_Minne
         /// <summary>
         /// Examines the datastructure List
         /// </summary>
+        
         static void ExamineList()
         {
             /*
@@ -110,7 +111,64 @@ namespace SkalProj_Datastrukturer_Minne
             //char nav = input[0];
             //string value = input.substring(1);
 
-            //switch(nav){...}
+            //switch (nav) {...}
+
+            //1. Create a list with user input displayed.
+            //2. Create user input field.
+            //3. Display user input the list.
+            //4. 
+
+            Console.WriteLine("List");
+
+                List<string> ExamineList = new List<string>();
+
+            while (true) 
+            {
+                Console.WriteLine("Enter a value");
+
+                string input = Console.ReadLine();
+                char charInput = ' ';
+                try
+                {
+                    charInput = Console.ReadLine()![0];
+                }
+                catch (IndexOutOfRangeException)
+                {
+                    Console.Clear();
+                    Console.WriteLine("Enter a value");
+                }
+
+                
+                ////var key = Console.ReadKey(intercept: true);
+                ////if (key.Key == ConsoleKey.Escape) 
+                //if(string.IsNullOrEmpty(input))
+                //{
+                //    break;
+                //}
+
+                switch (charInput)
+                {
+                    case '+':
+                        ExamineList.Add(input);
+                        break;
+                    case '-':
+                        ExamineList.Remove(input);
+                        break;
+                    case '*':
+                        string.IsNullOrEmpty(input);
+                        break;
+                    default:
+                        Console.WriteLine("Enter a value")
+                }
+                
+            }
+
+            Console.WriteLine("List content");
+
+            foreach (var item in ExamineList)
+            {
+                Console.WriteLine(item);
+            }
         }
 
         /// <summary>

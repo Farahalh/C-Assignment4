@@ -93,7 +93,7 @@ namespace SkalProj_Datastrukturer_Minne
         /// <summary>
         /// Examines the datastructure List
         /// </summary>
-        
+
         static void ExamineList()
         {
             /*
@@ -113,61 +113,41 @@ namespace SkalProj_Datastrukturer_Minne
 
             //switch (nav) {...}
 
-            //1. Create a list with user input displayed.
-            //2. Create user input field.
-            //3. Display user input the list.
-            //4. 
-
             Console.WriteLine("List");
 
-                List<string> ExamineList = new List<string>();
+            List<string> ExamineList = new List<string>(); //Creating list
 
-            while (true) 
+            while (true) //creating loop that hold switch case for adding and removing items to list
             {
-                Console.WriteLine("Enter a value");
-
+                Console.WriteLine("Enter '+' to add or '-' to remove (0 to exit):");
                 string input = Console.ReadLine();
-                char charInput = ' ';
-                try
+
+                if (string.IsNullOrEmpty(input)) //goes back to main menu if string is null or empty
                 {
-                    charInput = Console.ReadLine()![0];
-                }
-                catch (IndexOutOfRangeException)
-                {
-                    Console.Clear();
-                    Console.WriteLine("Enter a value");
+                    break;
                 }
 
-                
-                ////var key = Console.ReadKey(intercept: true);
-                ////if (key.Key == ConsoleKey.Escape) 
-                //if(string.IsNullOrEmpty(input))
-                //{
-                //    break;
-                //}
+                char operation = input[0]; //converting input into char literals
+                string item = input.Substring(1).Trim(); //inputing string intor substring and trimming space
 
-                switch (charInput)
+                switch (operation) 
                 {
                     case '+':
-                        ExamineList.Add(input);
+                        ExamineList.Add(item);//add item
                         break;
                     case '-':
-                        ExamineList.Remove(input);
-                        break;
-                    case '*':
-                        string.IsNullOrEmpty(input);
+                        ExamineList.Remove(item);//delete item
                         break;
                     default:
-                        Console.WriteLine("Enter a value")
+                        Console.WriteLine("Use only '+' or '-'");
+                        break;
                 }
-                
-            }
-
-            Console.WriteLine("List content");
-
-            foreach (var item in ExamineList)
-            {
-                Console.WriteLine(item);
+                Console.WriteLine("List content:");
+                foreach (var listItem in ExamineList)//displaying list content
+                {
+                    Console.WriteLine(listItem);
+                }
+                Console.WriteLine($"Count: {ExamineList.Count}, Capacity: {ExamineList.Capacity}");//displaying list count and capacity
             }
         }
 
@@ -175,36 +155,52 @@ namespace SkalProj_Datastrukturer_Minne
         /// Examines the datastructure Queue
         /// </summary>
         static void ExamineQueue()
-        {
+            {
             /*
              * Loop this method untill the user inputs something to exit to main menue.
              * Create a switch with cases to enqueue items or dequeue items
              * Make sure to look at the queue after Enqueueing and Dequeueing to see how it behaves
             */
+
+            //Console.WriteLine("Queue");
+
+            //Queue<string> examineQueue = new Queue<string>();
+
+            //    examineQueue.Enqueue("\na. The grocdry store opens, and the cashier´s line is empty.");
+            //    examineQueue.Enqueue("\nb. Kalle joins the queue.");
+            //    examineQueue.Enqueue("\nc. Greta joins the queue.");
+            //    examineQueue.Enqueue("\nd. Kalle is served and leaves the queue.");
+            //    examineQueue.Enqueue("\ne. Stina joins the queue.");
+            //    examineQueue.Enqueue("\nf. Greta is served and leaves the queue.");
+            //    examineQueue.Enqueue("\ng. Stina joins the queue.");
+            //    examineQueue.Enqueue("\nh. ");
         }
+    
 
-        /// <summary>
-        /// Examines the datastructure Stack
-        /// </summary>
-        static void ExamineStack()
-        {
-            /*
-             * Loop this method until the user inputs something to exit to main menue.
-             * Create a switch with cases to push or pop items
-             * Make sure to look at the stack after pushing and and poping to see how it behaves
-            */
-        }
 
-        static void CheckParanthesis()
-        {
-            /*
-             * Use this method to check if the paranthesis in a string is Correct or incorrect.
-             * Example of correct: (()), {}, [({})],  List<int> list = new List<int>() { 1, 2, 3, 4 };
-             * Example of incorrect: (()]), [), {[()}],  List<int> list = new List<int>() { 1, 2, 3, 4 );
-             */
 
-        }
+            /// <summary>
+            /// Examines the datastructure Stack
+            /// </summary>
+            static void ExamineStack()
+            {
+                /*
+                 * Loop this method until the user inputs something to exit to main menue.
+                 * Create a switch with cases to push or pop items
+                 * Make sure to look at the stack after pushing and and poping to see how it behaves
+                */
+            }
 
+            static void CheckParanthesis()
+            {
+                /*
+                 * Use this method to check if the paranthesis in a string is Correct or incorrect.
+                 * Example of correct: (()), {}, [({})],  List<int> list = new List<int>() { 1, 2, 3, 4 };
+                 * Example of incorrect: (()]), [), {[()}],  List<int> list = new List<int>() { 1, 2, 3, 4 );
+                 */
+
+            }
     }
 }
+
 

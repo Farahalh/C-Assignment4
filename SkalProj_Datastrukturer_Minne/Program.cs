@@ -128,9 +128,9 @@ namespace SkalProj_Datastrukturer_Minne
                 }
 
                 char operation = input[0]; //converting input into char literals
-                string item = input.Substring(1).Trim(); //inputing string intor substring and trimming space
+                string item = input.Substring(1).Trim(); //inputing string into substring and trimming space
 
-                switch (operation) 
+                switch (operation)
                 {
                     case '+':
                         ExamineList.Add(item);//add item
@@ -155,51 +155,83 @@ namespace SkalProj_Datastrukturer_Minne
         /// Examines the datastructure Queue
         /// </summary>
         static void ExamineQueue()
-            {
+        {
             /*
              * Loop this method untill the user inputs something to exit to main menue.
              * Create a switch with cases to enqueue items or dequeue items
              * Make sure to look at the queue after Enqueueing and Dequeueing to see how it behaves
             */
 
-            //Console.WriteLine("Queue");
+            Console.WriteLine("Queue");
 
-            //Queue<string> examineQueue = new Queue<string>();
+            Queue<string> ExamineQueue = new Queue<string>(); //Creating queue
 
-            //    examineQueue.Enqueue("\na. The grocdry store opens, and the cashier´s line is empty.");
-            //    examineQueue.Enqueue("\nb. Kalle joins the queue.");
-            //    examineQueue.Enqueue("\nc. Greta joins the queue.");
-            //    examineQueue.Enqueue("\nd. Kalle is served and leaves the queue.");
-            //    examineQueue.Enqueue("\ne. Stina joins the queue.");
-            //    examineQueue.Enqueue("\nf. Greta is served and leaves the queue.");
-            //    examineQueue.Enqueue("\ng. Stina joins the queue.");
-            //    examineQueue.Enqueue("\nh. ");
+            ExamineQueue.Enqueue("a. The grocery store opens, and the cashier's line is empty.");
+            Console.WriteLine("b. Kalle joins the queue.");
+            Console.WriteLine("c. Greta joins the queue.");
+            Console.WriteLine("d. Kalle is served and leaves the queue. ");
+            Console.WriteLine("e. Stina joins the queue.");
+            Console.WriteLine("f. Greta is served and leaves the queue.");
+            Console.WriteLine("g. Olle joins the queue.");
+
+            while (true) //creating loop that hold switch case for adding and removing items to queue
+            {
+               
+                Console.WriteLine("Enter '+' to add or '-' to remove (0 to exit):");
+                string input = Console.ReadLine();
+
+                if (string.IsNullOrEmpty(input)) //goes back to main menu if string is null or empty
+                {
+                    break;
+                }
+
+                char operation = input[0]; //converting input into char literals
+                string item = input.Substring(1).Trim(); //inputing string into substring and trimming space
+
+                switch (operation)
+                {
+                    case '+':
+                        ExamineQueue.Enqueue(item);//add item
+                        break;
+                    case '-':
+                        ExamineQueue.Dequeue();//delete item
+                        break;
+                    default:
+                        Console.WriteLine("Use only '+' or '-'");
+                        break;
+                }
+                Console.WriteLine("Queue Content:");
+                foreach (var queueItem in ExamineQueue)//displaying queue content
+                {
+                    Console.WriteLine(queueItem);
+                }
+            }
         }
-    
 
 
 
-            /// <summary>
-            /// Examines the datastructure Stack
-            /// </summary>
-            static void ExamineStack()
-            {
-                /*
-                 * Loop this method until the user inputs something to exit to main menue.
-                 * Create a switch with cases to push or pop items
-                 * Make sure to look at the stack after pushing and and poping to see how it behaves
-                */
-            }
 
-            static void CheckParanthesis()
-            {
-                /*
-                 * Use this method to check if the paranthesis in a string is Correct or incorrect.
-                 * Example of correct: (()), {}, [({})],  List<int> list = new List<int>() { 1, 2, 3, 4 };
-                 * Example of incorrect: (()]), [), {[()}],  List<int> list = new List<int>() { 1, 2, 3, 4 );
-                 */
+        /// <summary>
+        /// Examines the datastructure Stack
+        /// </summary>
+        static void ExamineStack()
+        {
+            /*
+             * Loop this method until the user inputs something to exit to main menue.
+             * Create a switch with cases to push or pop items
+             * Make sure to look at the stack after pushing and and poping to see how it behaves
+            */
+        }
 
-            }
+        static void CheckParanthesis()
+        {
+            /*
+             * Use this method to check if the paranthesis in a string is Correct or incorrect.
+             * Example of correct: (()), {}, [({})],  List<int> list = new List<int>() { 1, 2, 3, 4 };
+             * Example of incorrect: (()]), [), {[()}],  List<int> list = new List<int>() { 1, 2, 3, 4 );
+             */
+
+        }
     }
 }
 

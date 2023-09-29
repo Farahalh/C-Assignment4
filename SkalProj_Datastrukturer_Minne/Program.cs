@@ -167,12 +167,12 @@ namespace SkalProj_Datastrukturer_Minne
             Queue<string> ExamineQueue = new Queue<string>(); //Creating queue
 
             ExamineQueue.Enqueue("a. The grocery store opens, and the cashier's line is empty.");
-            Console.WriteLine("b. Kalle joins the queue.");
-            Console.WriteLine("c. Greta joins the queue.");
-            Console.WriteLine("d. Kalle is served and leaves the queue. ");
-            Console.WriteLine("e. Stina joins the queue.");
-            Console.WriteLine("f. Greta is served and leaves the queue.");
-            Console.WriteLine("g. Olle joins the queue.");
+            ExamineQueue.Enqueue("b. Kalle joins the queue.");
+            ExamineQueue.Enqueue("c. Greta joins the queue.");
+            ExamineQueue.Enqueue("d. Kalle is served and leaves the queue. ");
+            ExamineQueue.Enqueue("e. Stina joins the queue.");
+            ExamineQueue.Enqueue("f. Greta is served and leaves the queue.");
+            ExamineQueue.Enqueue("g. Olle joins the queue.");
 
             while (true) //creating loop that hold switch case for adding and removing items to queue
             {

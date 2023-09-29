@@ -13,7 +13,7 @@ namespace SkalProj_Datastrukturer_Minne
 
             while (true)
             {
-                Console.WriteLine("Please navigate through the menu by inputting the number \n(1, 2, 3 ,4, 0) of your choice"
+                Console.WriteLine("Please navigate through the menu by inputting the number \n(1, 2, 3, 4, 0) of your choice"
                     + "\n1. Examine a List"
                     + "\n2. Examine a Queue"
                     + "\n3. Examine a Stack"
@@ -208,9 +208,6 @@ namespace SkalProj_Datastrukturer_Minne
             }
         }
 
-
-
-
         /// <summary>
         /// Examines the datastructure Stack
         /// </summary>
@@ -221,6 +218,51 @@ namespace SkalProj_Datastrukturer_Minne
              * Create a switch with cases to push or pop items
              * Make sure to look at the stack after pushing and and poping to see how it behaves
             */
+
+            Console.WriteLine("Stack");
+
+            Stack<string> ExamineStack = new Stack<string>(); //Creating a Stack
+
+            ExamineStack.Push("a. The grocery store opens, and the cashier's line is empty.");
+            ExamineStack.Push("b. Kalle joins the queue.");
+            ExamineStack.Push("c. Greta joins the queue.");
+            ExamineStack.Push("d. Kalle is served and leaves the queue. ");
+            ExamineStack.Push("e. Stina joins the queue.");
+            ExamineStack.Push("f. Greta is served and leaves the queue.");
+            ExamineStack.Push("g. Olle joins the queue.");
+
+            while (true) //creating loop that hold switch case for pushing and popping items to stack
+            {
+
+                Console.WriteLine("Enter '+' to add or '-' to remove (0 to exit):");
+                string input = Console.ReadLine();
+
+                if (string.IsNullOrEmpty(input)) //goes back to main menu if string is null or empty
+                {
+                    break;
+                }
+
+                char operation = input[0]; //converting input into char literals
+                string item = input.Substring(1).Trim(); //inputing string into substring and trimming space
+
+                switch (operation)
+                {
+                    case '+':
+                        ExamineStack.Push(item);//add item
+                        break;
+                    case '-':
+                        ExamineStack.Pop();//delete item
+                        break;
+                    default:
+                        Console.WriteLine("Use only '+' or '-'");
+                        break;
+                }
+                Console.WriteLine("Queue Content:");
+                foreach (var stackItem in ExamineStack)//displaying queue content
+                {
+                    Console.WriteLine(stackItem);
+                }
+            }
         }
 
         static void CheckParanthesis()

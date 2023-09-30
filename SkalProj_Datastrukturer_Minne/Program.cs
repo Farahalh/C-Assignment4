@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Reflection.Metadata.Ecma335;
+using System.Security.Cryptography.X509Certificates;
 
 namespace SkalProj_Datastrukturer_Minne
 {
@@ -176,7 +178,7 @@ namespace SkalProj_Datastrukturer_Minne
 
             while (true) //creating loop that hold switch case for adding and removing items to queue
             {
-               
+
                 Console.WriteLine("Enter '+' to add or '-' to remove (0 to exit):");
                 string input = Console.ReadLine();
 
@@ -219,6 +221,7 @@ namespace SkalProj_Datastrukturer_Minne
              * Make sure to look at the stack after pushing and and poping to see how it behaves
             */
 
+
             Console.WriteLine("Stack");
 
             Stack<string> ExamineStack = new Stack<string>(); //Creating a Stack
@@ -234,7 +237,7 @@ namespace SkalProj_Datastrukturer_Minne
             while (true) //creating loop that hold switch case for pushing and popping items to stack
             {
 
-                Console.WriteLine("Enter '+' to add or '-' to remove (0 to exit):");
+                Console.WriteLine("Enter '+' to add or '-' to remove, 'r' to reverse (0 to exit):");
                 string input = Console.ReadLine();
 
                 if (string.IsNullOrEmpty(input)) //goes back to main menu if string is null or empty
@@ -253,18 +256,31 @@ namespace SkalProj_Datastrukturer_Minne
                     case '-':
                         ExamineStack.Pop();//delete item
                         break;
+                    case 'r':
+                        ReverseText();
+                        break;
+                    case '0':
+                        return;
                     default:
-                        Console.WriteLine("Use only '+' or '-'");
+                        Console.WriteLine("Use only '+', '-', 'r' or '0'.");
                         break;
                 }
-                Console.WriteLine("Queue Content:");
-                foreach (var stackItem in ExamineStack)//displaying queue content
+                Console.WriteLine("Stack Content:");
+                foreach (var stackItem in ExamineStack)//displaying stack content
                 {
                     Console.WriteLine(stackItem);
                 }
             }
         }
 
+        static string ReverseText()
+        {
+            //Collect a string
+            //Turn string into an array
+            //Reverse order of array
+            //Create new string with array
+            //Return new string
+        }
         static void CheckParanthesis()
         {
             /*
@@ -273,7 +289,90 @@ namespace SkalProj_Datastrukturer_Minne
              * Example of incorrect: (()]), [), {[()}],  List<int> list = new List<int>() { 1, 2, 3, 4 );
              */
 
-        }
+            //create a dictionary with correct and incorrect characters
+            //
+
+        //    Console.WriteLine("Write a parenthesis to check if it´s correct or not: ");
+        //    string input = Console.ReadLine();
+        //    bool isCorrect = CheckParanth(input);
+
+        //    if (isCorrect)
+        //    {
+        //        Console.WriteLine("Correct");
+        //    }
+        //    else
+        //    {
+        //        Console.WriteLine("Not Correct");
+        //    }
+        //}
+
+        //static bool CheckParanth(string input)
+        //{
+        //    Dictionary<char, char> parenth = new Dictionary<char, char>();
+        //    {
+        //        { '(', ')' },
+        //        { '{', '}' },
+        //        { '[', ']' }
+        //    };
+
+        //    Stack<char> stack = new Stack<char>();
+
+        //    foreach (char character in input)
+        //    {
+        //        if (parenth.ContainsValue(character))
+        //        {
+        //            stack.Push(character);
+        //        }
+        //        else if (parenth.ContainsValue(character))
+        //        {
+        //            if (stack.Count == 0 || parenth[stack.Pop()] == character)
+        //            {
+        //                return false;
+        //            }
+        //        }
+        //    }
+        //    return stack.Count == 0;
+        //}
+
+
+
+        //    //var customDictionary = new Dictionary<string, bool>();
+
+        //    Dictionary<string, bool> characters = new Dictionary<string, bool>();
+        //    characters.Add("(())", true);
+        //    characters.Add("{}", true);
+        //    characters.Add("[({})]", true);
+
+        //    characters.Add("(()])", false);
+        //    characters.Add("[)", false);
+        //    characters.Add("{[()}]", false);
+
+        //    bool allTrue = CheckDictionary(characters);
+
+        //    //Console.WriteLine("Write a parenthesis to check if it´s correct or not: ");
+
+        //    if (allTrue == true)
+        //    {
+        //        Console.WriteLine("True");
+        //    }
+        //    else
+        //    {
+        //        Console.WriteLine("False");
+        //    }
+
+        //    static bool CheckDictionary(Dictionary<string, bool> check)
+        //    {
+        //        var test = check.Where(x => x.Value == true);
+        //        if (test.Count() == 0)
+        //        {
+        //            return true;
+        //        }
+        //        else
+        //        {
+        //            return false;
+        //        }
+        //    }
+
     }
 }
 

@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Reflection.Metadata.Ecma335;
+using System.Runtime.Intrinsics.X86;
 using System.Security.Cryptography.X509Certificates;
+using System.Threading;
+using System.Xml.Linq;
 
 namespace SkalProj_Datastrukturer_Minne
 {
@@ -151,6 +154,19 @@ namespace SkalProj_Datastrukturer_Minne
                 }
                 Console.WriteLine($"Count: {ExamineList.Count}, Capacity: {ExamineList.Capacity}");//displaying list count and capacity
             }
+
+            //1.Complete the implementation of the ExamineList method so that the examination can be carried out.
+            //2.When Does the List's Capacity Increase? (i.e., the size of the underlying array)
+            //When inputs are added to the list.
+            //3.By How Much Does the Capacity Increase?
+            //By the exact amount of input that is added to list.
+            //4.Why Doesn't the List's Capacity Increase at the Same Rate as Elements Are Added?
+            //-
+            //5.Does the Capacity Decrease When Elements Are Removed from the List?
+            //-
+            //6.When Is It Advantageous to Use a Custom Array Instead of a List?
+            //-
+
         }
 
         /// <summary>
@@ -300,7 +316,11 @@ namespace SkalProj_Datastrukturer_Minne
              * Example of correct: (()), {}, [({})],  List<int> list = new List<int>() { 1, 2, 3, 4 };
              * Example of incorrect: (()]), [), {[()}],  List<int> list = new List<int>() { 1, 2, 3, 4 );
              */
-        
+
+            //1. create a list or dictionary with correct and uncorrect input
+            //2. convert user input to char array
+            //3. loop through user input to find opening and matching closing parentheses 
+            //3. create a bool sating true or false based on user input
         }
     }
 }

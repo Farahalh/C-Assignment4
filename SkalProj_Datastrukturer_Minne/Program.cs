@@ -280,6 +280,18 @@ namespace SkalProj_Datastrukturer_Minne
             //Reverse order of array
             //Create new string with array
             //Return new string
+
+            //To get string input back in reverse, press r + space + (insert string) + enter
+            string sentence = Console.ReadLine();
+            char[] charArr = sentence.ToCharArray();
+            Array.Reverse(charArr);
+
+            foreach (char c in charArr)
+            {
+                Console.WriteLine(c);
+            }
+
+            return sentence;
         }
         static void CheckParanthesis()
         {
@@ -292,88 +304,87 @@ namespace SkalProj_Datastrukturer_Minne
             //create a dictionary with correct and incorrect characters
             //
 
-        //    Console.WriteLine("Write a parenthesis to check if it´s correct or not: ");
-        //    string input = Console.ReadLine();
-        //    bool isCorrect = CheckParanth(input);
+            //    Console.WriteLine("Write a parenthesis to check if it´s correct or not: ");
+            //    string input = Console.ReadLine();
+            //    bool isCorrect = CheckParanth(input);
 
-        //    if (isCorrect)
-        //    {
-        //        Console.WriteLine("Correct");
-        //    }
-        //    else
-        //    {
-        //        Console.WriteLine("Not Correct");
-        //    }
-        //}
+            //    if (isCorrect)
+            //    {
+            //        Console.WriteLine("Correct");
+            //    }
+            //    else
+            //    {
+            //        Console.WriteLine("Not Correct");
+            //    }
+            //}
 
-        //static bool CheckParanth(string input)
-        //{
-        //    Dictionary<char, char> parenth = new Dictionary<char, char>();
-        //    {
-        //        { '(', ')' },
-        //        { '{', '}' },
-        //        { '[', ']' }
-        //    };
+            //static bool CheckParanth(string input)
+            //{
+            //    Dictionary<char, char> parenth = new Dictionary<char, char>();
+            //    {
+            //        { '(', ')' },
+            //        { '{', '}' },
+            //        { '[', ']' }
+            //    };
 
-        //    Stack<char> stack = new Stack<char>();
+            //    Stack<char> stack = new Stack<char>();
 
-        //    foreach (char character in input)
-        //    {
-        //        if (parenth.ContainsValue(character))
-        //        {
-        //            stack.Push(character);
-        //        }
-        //        else if (parenth.ContainsValue(character))
-        //        {
-        //            if (stack.Count == 0 || parenth[stack.Pop()] == character)
-        //            {
-        //                return false;
-        //            }
-        //        }
-        //    }
-        //    return stack.Count == 0;
-        //}
+            //    foreach (char character in input)
+            //    {
+            //        if (parenth.ContainsValue(character))
+            //        {
+            //            stack.Push(character);
+            //        }
+            //        else if (parenth.ContainsValue(character))
+            //        {
+            //            if (stack.Count == 0 || parenth[stack.Pop()] == character)
+            //            {
+            //                return false;
+            //            }
+            //        }
+            //    }
+            //    return stack.Count == 0;
+            //}
 
 
 
-        //    //var customDictionary = new Dictionary<string, bool>();
+            //    //var customDictionary = new Dictionary<string, bool>();
 
-        //    Dictionary<string, bool> characters = new Dictionary<string, bool>();
-        //    characters.Add("(())", true);
-        //    characters.Add("{}", true);
-        //    characters.Add("[({})]", true);
+            //    Dictionary<string, bool> characters = new Dictionary<string, bool>();
+            //    characters.Add("(())", true);
+            //    characters.Add("{}", true);
+            //    characters.Add("[({})]", true);
 
-        //    characters.Add("(()])", false);
-        //    characters.Add("[)", false);
-        //    characters.Add("{[()}]", false);
+            //    characters.Add("(()])", false);
+            //    characters.Add("[)", false);
+            //    characters.Add("{[()}]", false);
 
-        //    bool allTrue = CheckDictionary(characters);
+            //    bool allTrue = CheckDictionary(characters);
 
-        //    //Console.WriteLine("Write a parenthesis to check if it´s correct or not: ");
+            //    //Console.WriteLine("Write a parenthesis to check if it´s correct or not: ");
 
-        //    if (allTrue == true)
-        //    {
-        //        Console.WriteLine("True");
-        //    }
-        //    else
-        //    {
-        //        Console.WriteLine("False");
-        //    }
+            //    if (allTrue == true)
+            //    {
+            //        Console.WriteLine("True");
+            //    }
+            //    else
+            //    {
+            //        Console.WriteLine("False");
+            //    }
 
-        //    static bool CheckDictionary(Dictionary<string, bool> check)
-        //    {
-        //        var test = check.Where(x => x.Value == true);
-        //        if (test.Count() == 0)
-        //        {
-        //            return true;
-        //        }
-        //        else
-        //        {
-        //            return false;
-        //        }
-        //    }
+            //    static bool CheckDictionary(Dictionary<string, bool> check)
+            //    {
+            //        var test = check.Where(x => x.Value == true);
+            //        if (test.Count() == 0)
+            //        {
+            //            return true;
+            //        }
+            //        else
+            //        {
+            //            return false;
+            //        }
 
+        }
     }
 }
-
 

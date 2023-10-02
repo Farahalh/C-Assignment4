@@ -282,13 +282,13 @@ namespace SkalProj_Datastrukturer_Minne
             //Return new string
 
             //To get string input back in reverse, press r + space + (insert string) + enter
-            string sentence = Console.ReadLine();
-            char[] charArr = sentence.ToCharArray();
-            Array.Reverse(charArr);
+            string sentence = Console.ReadLine(); //Assignes string to user inpu,Ask for user input
+            char[] charArr = sentence.ToCharArray(); //converts string user input to char and then char to char array
+            Array.Reverse(charArr); // reverses char array
 
             foreach (char c in charArr)
             {
-                Console.WriteLine(c);
+                Console.WriteLine(c); //displays user inout as a reversed char array
             }
 
             return sentence;
@@ -300,90 +300,7 @@ namespace SkalProj_Datastrukturer_Minne
              * Example of correct: (()), {}, [({})],  List<int> list = new List<int>() { 1, 2, 3, 4 };
              * Example of incorrect: (()]), [), {[()}],  List<int> list = new List<int>() { 1, 2, 3, 4 );
              */
-
-            //create a dictionary with correct and incorrect characters
-            //
-
-            //    Console.WriteLine("Write a parenthesis to check if it´s correct or not: ");
-            //    string input = Console.ReadLine();
-            //    bool isCorrect = CheckParanth(input);
-
-            //    if (isCorrect)
-            //    {
-            //        Console.WriteLine("Correct");
-            //    }
-            //    else
-            //    {
-            //        Console.WriteLine("Not Correct");
-            //    }
-            //}
-
-            //static bool CheckParanth(string input)
-            //{
-            //    Dictionary<char, char> parenth = new Dictionary<char, char>();
-            //    {
-            //        { '(', ')' },
-            //        { '{', '}' },
-            //        { '[', ']' }
-            //    };
-
-            //    Stack<char> stack = new Stack<char>();
-
-            //    foreach (char character in input)
-            //    {
-            //        if (parenth.ContainsValue(character))
-            //        {
-            //            stack.Push(character);
-            //        }
-            //        else if (parenth.ContainsValue(character))
-            //        {
-            //            if (stack.Count == 0 || parenth[stack.Pop()] == character)
-            //            {
-            //                return false;
-            //            }
-            //        }
-            //    }
-            //    return stack.Count == 0;
-            //}
-
-
-
-            //    //var customDictionary = new Dictionary<string, bool>();
-
-            //    Dictionary<string, bool> characters = new Dictionary<string, bool>();
-            //    characters.Add("(())", true);
-            //    characters.Add("{}", true);
-            //    characters.Add("[({})]", true);
-
-            //    characters.Add("(()])", false);
-            //    characters.Add("[)", false);
-            //    characters.Add("{[()}]", false);
-
-            //    bool allTrue = CheckDictionary(characters);
-
-            //    //Console.WriteLine("Write a parenthesis to check if it´s correct or not: ");
-
-            //    if (allTrue == true)
-            //    {
-            //        Console.WriteLine("True");
-            //    }
-            //    else
-            //    {
-            //        Console.WriteLine("False");
-            //    }
-
-            //    static bool CheckDictionary(Dictionary<string, bool> check)
-            //    {
-            //        var test = check.Where(x => x.Value == true);
-            //        if (test.Count() == 0)
-            //        {
-            //            return true;
-            //        }
-            //        else
-            //        {
-            //            return false;
-            //        }
-
+        
         }
     }
 }
